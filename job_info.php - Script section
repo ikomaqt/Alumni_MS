@@ -1,0 +1,108 @@
+// Fetch paginated jobs from the server
+    async function fetchPaginatedJobs(page) {
+        try {
+            const response = await fetch(`job_info.php?ajax=1&type=pagination&page=${page}`);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            
+            // Update jobs list
+            jobsContainer.innerHTML = data.jobs_html;
+            
+            // Update pagination container
+            document.querySelector('.pagination').outerHTML = data.pagination_html;
+            
+            // Update URL without page reload
+            const newUrl = new URL(window.location.href);
+            newUrl.searchParams.set('page', page);
+            window.history.pushState({}, '', newUrl);
+            
+            // Reattach event listeners
+            attachJobItemListeners();
+            attachPaginationListeners();
+            
+        } catch (error) {
+            console.error('Error fetching paginated jobs:', error);
+        }
+    }
+    
+    // Add new function to attach pagination listeners
+    function attachPaginationListeners() {
+        document.querySelectorAll('.pagination-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (btn.disabled) return;
+                
+                const page = parseInt(btn.dataset.page);
+                if (!isNaN(page)) {
+                    fetchPaginatedJobs(page);
+                }
+            });
+        });
+    }
+    
+    // Add to the setupEventListeners function
+    function setupEventListeners() {
+        // ...existing listeners...
+        
+        // Initialize pagination listeners
+        attachPaginationListeners();
+    }
+
+    async function toggleSavedJob(jobId) {
+        // Find all heart icons for this job (both in list and details)
+        const heartIcons = document.querySelectorAll(
+            `.save-job-btn[data-id="${jobId}"] .heart-icon, .save-job-detail-btn[data-id="${jobId}"] .heart-icon`
+        );
+        
+        // Determine current state from the first icon
+        const isSaved = heartIcons[0]?.classList.contains('active');
+        const action = isSaved ? 'unsave' : 'save';
+
+        // Disable all heart icons temporarily to prevent double clicks
+        heartIcons.forEach(icon => icon.style.pointerEvents = 'none');
+
+        try {
+            const response = await fetch('job_info.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `action=${action}&job_id=${jobId}`,
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const result = await response.json();
+            showToast(result.message);
+
+            if (result.success) {
+                // Toggle heart icons only if the action was successful
+                heartIcons.forEach(icon => {
+                    icon.classList.toggle('active');
+                });
+                
+                // Update saved jobs array
+                if (action === 'save') {
+                    if (!savedJobs.includes(jobId)) {
+                        savedJobs.push(jobId);
+                    }
+                } else {
+                    savedJobs = savedJobs.filter(id => id !== jobId);
+                }
+                
+                // Update UI to reflect changes
+                updateUI();
+            }
+
+        } catch (error) {
+            console.error('Error:', error);
+            showToast('Error updating bookmark');
+        } finally {
+            // Re-enable heart icons
+            heartIcons.forEach(icon => icon.style.pointerEvents = '');
+        }
+    }
