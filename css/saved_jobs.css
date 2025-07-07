@@ -1,0 +1,111 @@
+ /* Default background for the page */
+       
+
+        /* Saved Job Card */
+        .job-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 700px;
+            padding: 15px;
+        }
+
+        .job-card:hover {
+            background-color: #f1f1f1;
+        }
+
+        .job-card .job-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .job-card .job-company {
+            font-size: 1.1rem;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .job-card .job-location {
+            font-size: 1rem;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        .job-card .job-description {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .job-card .saved-date {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 10px;
+        }
+
+        /* Notification Section */
+        .notification-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Three dots button (ellipsis) */
+        .three-dots-btn {
+            font-size: 20px;
+            color: #555;
+            cursor: pointer;
+            float: right;
+            transition: color 0.3s ease;
+        }
+
+        /* Hover effect on the 3 dots button */
+        .three-dots-btn:hover {
+            color: #007bff;
+        }
+
+        .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position below the button */
+    right: 0; /* Align to the right */
+    left: -140px; /* Move it a little to the left */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 150px; /* Adjusted width */
+}
+
+        /* Responsive adjustments */
+        @media (max-width: 991px) {
+            .job-card, .notification-section {
+                width: 90%;
+                max-width: none;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .job-card, .notification-section {
+                width: 95%;
+            }
+        }

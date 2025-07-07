@@ -1,0 +1,44 @@
+body {
+    padding-right: 10px;
+    padding: 30px;
+    padding-top: 60px;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    max-width: 350px;
+    border-radius: 20px;
+    padding: 30px; /* Reduced padding */
+    box-shadow: rgba(100, 100, 111, 1.2) 0px 7px 29px 0px;
+    background-color: white;
+}
+
+.form-control {
+    margin-bottom: 15px; /* Reduced margin */
+    border-radius: 25px;
+    border-color: blue;
+}
+
+.form-btn {
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.btn {
+    border-radius: 25px;
+    width: 100%; /* Ensure buttons take full width */
+}
+
+.text-center {
+    margin-bottom: 20px; /* Adjusted margin */
+}
+
+.password-error {
+    color: red;
+    font-size: 0.875em;
+    display: none; /* Hidden by default */
+}

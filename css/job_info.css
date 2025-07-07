@@ -1,0 +1,193 @@
+:root {
+    --primary-color: #0a66c2;
+    --text-primary: #000000;
+    --text-secondary: #666666;
+    --background-primary: #ffffff;
+    --background-secondary: #f3f2ef;
+    --border-color: #e0e0e0;
+    --spacing: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.5;
+    background-color: var(--background-secondary);
+    color: var(--text-primary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing);
+}
+
+.jobs-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+}
+
+@media (min-width: 768px) {
+    .jobs-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.jobs-list {
+    flex: 1;
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .jobs-list {
+        max-width: 400px;
+    }
+}
+
+.job-card {
+    background-color: var(--background-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: var(--spacing);
+    margin-bottom: var(--spacing);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.job-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.job-card.active {
+    border-color: var(--primary-color);
+    background-color: #f8fafd;
+}
+
+.job-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.job-info {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.job-info span {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.job-type {
+    display: inline-block;
+    background-color: var(--background-secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.job-details {
+    background-color: var(--background-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: var(--spacing);
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .job-details {
+        flex: 2;
+        position: sticky;
+        top: var(--spacing);
+        display: block;
+    }
+}
+
+.job-details-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--spacing);
+    margin-bottom: var(--spacing);
+    position: relative;
+}
+
+.job-details-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.job-details-company {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.apply-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.apply-button:hover {
+    background-color: #004182;
+}
+
+.bookmark-icon {
+    position: absolute;
+    top: var(--spacing);
+    right: var(--spacing);
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.bookmark-icon.active {
+    color: var(--primary-color);
+}
+
+.job-description {
+    white-space: pre-line;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 767px) {
+    .job-details.mobile-visible {
+        display: block;
+        margin-top: var(--spacing);
+    }
+}
+
+.back-button {
+    display: none;
+    margin-bottom: var(--spacing);
+    padding: 0.5rem 1rem;
+    background-color: var(--background-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .back-button {
+        display: block;
+    }
+}
+

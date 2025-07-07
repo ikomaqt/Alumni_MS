@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+/* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    min-width: 100vw;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffffff, #d4d4d4);
+}
+
+#webcrumbs {
+    width: 1200px;
+    background-color: #f9fafb;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+header {
+    margin-bottom: 32px;
+}
+
+header h1 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #4b5563;
+}
+
+/* Buttons */
+button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Job Listings */
+.job-listing {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.job-listing:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.job-listing .header {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 24px;
+}
+
+.job-listing .header h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.job-listing .header .meta {
+    display: flex;
+    align-items: center;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.job-listing .header .meta span {
+    margin-right: 16px;
+}
+
+.job-listing .header .tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.job-listing .header .tags span {
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 14px;
+    background-color: #e0e7ff;
+    color: #4f46e5;
+}
+
+.job-listing .header .tags span:hover {
+    background-color: #c7d2fe;
+}
+
+.job-listing .header .stats {
+    display: flex;
+    gap: 16px;
+}
+
+.job-listing .header .stats div {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #f3f4f6;
+    cursor: pointer;
+}
+
+.job-listing .header .stats div:hover {
+    background-color: #e5e7eb;
+}
+
+.job-listing .applicants {
+    padding: 24px;
+}
+
+.job-listing .applicants h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.job-listing .applicants .applicant {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    transition: all 0.2s ease;
+}
+
+.job-listing .applicants .applicant:hover {
+    border-color: #a5b4fc;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.job-listing .applicants .applicant .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #e0e7ff;
+    color: #4f46e5;
+    transition: transform 0.2s ease;
+}
+
+.job-listing .applicants .applicant .avatar:hover {
+    transform: scale(1.1);
+}
+
+.job-listing .applicants .applicant .details {
+    flex: 1;
+}
+
+.job-listing .applicants .applicant .details h5 {
+    font-weight: 600;
+}
+
+.job-listing .applicants .applicant .details p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.job-listing .applicants .applicant .details .skills {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.job-listing .applicants .applicant .details .skills span {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: #f3f4f6;
+    color: #374151;
+    font-size: 12px;
+}
+
+.job-listing .applicants .applicant .details .actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.job-listing .applicants .applicant .details .actions button {
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.job-listing .applicants .applicant .details .actions button.primary {
+    background-color: #4f46e5;
+    color: white;
+}
+
+.job-listing .applicants .applicant .details .actions button.primary:hover {
+    background-color: #4338ca;
+}
+
+.job-listing .applicants .applicant .details .actions button.secondary {
+    border: 1px solid #d1d5db;
+    color: #374151;
+}
+
+.job-listing .applicants .applicant .details .actions button.secondary:hover {
+    background-color: #f3f4f6;
+}
+
+/* Closed Jobs */
+.closed-jobs {
+    margin-top: 32px;
+}
+
+.closed-jobs summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.closed-jobs summary h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.closed-jobs summary div {
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+}
+
+.closed-jobs summary div:hover {
+    color: #1f2937;
+}
+
+.closed-jobs .closed-job {
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px;
+    border-left: 4px solid #9ca3af;
+    transition: all 0.2s ease;
+}
+
+.closed-jobs .closed-job:hover {
+    border-left-color: #4b5563;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.closed-jobs .closed-job h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.closed-jobs .closed-job .meta {
+    display: flex;
+    align-items: center;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.closed-jobs .closed-job .actions {
+    display: flex;
+    gap: 8px;
+}
+
+.closed-jobs .closed-job .actions button {
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.closed-jobs .closed-job .actions button.primary {
+    border: 1px solid #4f46e5;
+    color: #4f46e5;
+}
+
+.closed-jobs .closed-job .actions button.primary:hover {
+    background-color: #e0e7ff;
+}
+
+.closed-jobs .closed-job .actions button.secondary {
+    border: 1px solid #d1d5db;
+    color: #374151;
+}
+
+.closed-jobs .closed-job .actions button.secondary:hover {
+    background-color: #f3f4f6;
+}

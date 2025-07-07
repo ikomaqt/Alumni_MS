@@ -1,0 +1,380 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 28px;
+}
+
+.form-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+/* ===== STEP INDICATOR STYLES - START ===== */
+/* This section controls the appearance of the step indicator */
+
+.step-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* This creates the horizontal line that connects all steps */
+.step-indicator::before {
+    content: '';
+    position: absolute;
+    top: 24px; /* Must match the top value of .step-progress */
+    left: 0; /* EDIT THIS: Extend the line slightly to the left */
+    right: 0; /* EDIT THIS: Extend the line slightly to the right */
+    height: 2px; /* Must match the height value of .step-progress */
+    background-color: #e0e0e0; /* Change the color of the inactive line */
+    z-index: 1;
+}
+
+.step {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+/* This controls the appearance of the step circles */
+.step-circle {
+    width: 48px; /* EDIT THIS: Adjust the size of the circle */
+    height: 48px; /* EDIT THIS: Adjust the size of the circle */
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #e0e0e0; /* EDIT THIS: Change the border color of inactive steps */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 18px; /* EDIT THIS: Adjust the font size of the step numbers */
+    color: #666; /* EDIT THIS: Change the color of the step numbers */
+}
+
+/* Active step styling */
+.step.active .step-circle {
+    border-color: #4361ee; /* EDIT THIS: Change the border color of the active step */
+    background-color: #fff;
+    color: #4361ee; /* EDIT THIS: Change the color of the active step number */
+}
+
+/* Completed step styling */
+.step.completed .step-circle {
+    background-color: #4361ee; /* EDIT THIS: Change the background color of completed steps */
+    border-color: #4361ee; /* EDIT THIS: Change the border color of completed steps */
+    color: #fff; /* EDIT THIS: Change the color of completed step numbers/checkmark */
+}
+
+.step-title {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.step.active .step-title {
+    color: #4361ee; /* EDIT THIS: Change the color of the active step title */
+    font-weight: 600;
+}
+
+.step.completed .step-title {
+    color: #4361ee; /* EDIT THIS: Change the color of completed step titles */
+}
+
+/* This is the progress bar that fills as steps are completed */
+.step-progress {
+    position: absolute;
+    top: 24px; /* Must match the top value of .step-indicator::before */
+    left: -2%; /* EDIT THIS: Extend the active line slightly to the left */
+    right: -2%; /* EDIT THIS: Extend the active line slightly to the right */
+    height: 2px; /* Must match the height value of .step-indicator::before */
+    background-color: #4361ee; /* Change the color of the completed progress line */
+    z-index: 1;
+    transition: width 0.3s ease;
+    width: 0%; /* Adjusted dynamically in JavaScript */
+}
+/* ===== STEP INDICATOR STYLES - END ===== */
+
+/* Form step styles */
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #444;
+}
+
+label .required {
+    color: #e53e3e;
+    margin-left: 2px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #4361ee;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+.input-error {
+    border-color: #e53e3e !important;
+}
+
+.error-message {
+    color: #e53e3e;
+    font-size: 12px;
+    margin-top: 4px;
+    display: none;
+}
+
+.error-message.visible {
+    display: block;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-col {
+    flex: 1;
+}
+
+/* Radio buttons */
+.radio-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 8px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* File upload */
+.file-upload {
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    margin-bottom: 20px;
+}
+
+.file-upload:hover {
+    border-color: #4361ee;
+}
+
+.file-upload-icon {
+    font-size: 24px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.file-upload-text {
+    font-size: 14px;
+    color: #666;
+}
+
+.file-upload-subtext {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.file-preview {
+    display: none;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+.file-preview.visible {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.file-preview-icon {
+    color: #4caf50;
+}
+
+/* Navigation buttons */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #4361ee;
+    color: #4361ee;
+}
+
+.btn-outline:hover {
+    background-color: #f0f4ff;
+}
+
+.btn-primary {
+    background-color: #4361ee;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #3a56d4;
+}
+
+.btn-success {
+    background-color: #10b981;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #0ea271;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Info box */
+.info-box {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    padding: 15px;
+    font-size: 13px;
+    color: #666;
+    margin-top: 20px;
+}
+
+.info-box-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.info-box ul {
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+/* Loading spinner */
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .step-title {
+        display: none;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

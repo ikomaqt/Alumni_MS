@@ -1,0 +1,46 @@
+body {
+      font-family: 'Arial', sans-serif;
+    }
+
+    .job-container {
+      margin: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .job-container h4 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .job-details {
+      display: block;
+      margin-top: 12px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .job-details p {
+      margin: 8px 0;
+    }
+
+    .apply-btn {
+      background-color: #007bff;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .apply-btn:hover {
+      background-color: #0056b3;
+    }

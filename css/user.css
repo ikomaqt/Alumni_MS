@@ -1,0 +1,188 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1e3a8a;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Left: Logo & Navbar Links */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar img.logo {
+    height: 50px;
+    border-radius: 50%;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #fcd34d;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Right: Search & Profile */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.search-input {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+    outline: none;
+}
+
+.search-button {
+    padding: 8px 12px;
+    background-color: #fcd34d;
+    color: #1e3a8a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+}
+
+.search-button:hover {
+    background-color: #fbbf24;
+}
+
+/* Profile */
+.profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+/* BURGER MENU */
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #1e3a8a;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    font-size: 18px;
+    transition: background 0.3s ease-in-out;
+}
+
+.mobile-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Media Queries for Adaptive Design */
+@media (max-width: 768px) {
+    /* Hide regular nav links and show burger menu */
+    .nav-links {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    /* Adjust search bar width */
+    .search-input {
+        width: 150px;
+    }
+
+    /* Show mobile menu when burger is clicked */
+    .mobile-menu.active {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjust navbar padding and logo size */
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar img.logo {
+        height: 40px;
+    }
+
+    /* Hide search bar on very small screens */
+    .search-container {
+        display: none;
+    }
+
+    /* Adjust profile picture size */
+    .profile-pic {
+        width: 35px;
+        height: 35px;
+    }
+}

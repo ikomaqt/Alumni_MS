@@ -1,0 +1,296 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8fafc; /* Soft off-white background */
+    color: #333;
+}
+
+/* Edit Profile Section */
+.profile-section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #fff; /* Clean white background */
+    border-radius: 15px; /* Rounded corners for a modern look */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 1px solid #e2e8f0; /* Light border to maintain separation */
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #1e3a8a; /* Blue border for profile picture */
+}
+
+.profile-right h1 {
+    font-size: 28px;
+    color: #333;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.profile-details p {
+    font-size: 16px;
+    color: #4a5568; /* Slightly softer text color */
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+/* Edit Profile Button */
+.edit-profile-btn {
+    background-color: #fcd34d; /* Yellow background */
+    color: #1e3a8a;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.edit-profile-btn:hover {
+    background-color: #fbbf24; /* Darker yellow on hover */
+    transform: translateY(-2px); /* Elevate on hover */
+}
+
+.edit-profile-btn:active {
+    background-color: #f59e0b; /* Even darker yellow on click */
+    transform: translateY(0); /* Reset position */
+}
+
+/* Section Headers */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f7fafc; /* Soft background */
+    color: #333;
+    padding: 14px 22px;
+    border-radius: 8px; /* Smooth rounded edges */
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease-in-out;
+    border: 1px solid #ddd; /* Subtle border */
+}
+
+.section-header:hover {
+    background: #edf2f7; /* Light hover effect */
+}
+
+.section-header .icon {
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+/* Content Sections */
+.content {
+    display: none;
+    padding: 20px;
+    background: #f7fafc;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.content h3 {
+    margin: 5px 0;
+    color: #3b82f6; /* Blue for section highlights */
+}
+
+.content p, .content ul {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-pic {
+        width: 90px;
+        height: 90px;
+    }
+
+    .profile-right h1 {
+        font-size: 24px;
+    }
+
+    .profile-right p {
+        font-size: 14px;
+    }
+
+    .edit-profile-btn {
+        width: 100%;
+    }
+}
+
+/* Logout Button - Clean and Minimal */
+.logout-btn {
+    background-color: #dc2626; /* Red background for logout */
+    color: white;
+    padding: 12px 20px;
+    border: 1px solid transparent;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-left: 10px;
+}
+
+.logout-btn:hover {
+    background-color: #b91c1c; /* Darker red on hover */
+    transform: translateY(-2px); /* Elevate on hover */
+}
+
+.logout-btn:active {
+    background-color: #991b1b; /* Even darker red on click */
+    transform: translateY(0); /* Reset position */
+}
+
+/* Upload Resume Button */
+.upload-resume-btn {
+    background-color: #fcd34d; /* Yellow background */
+    color: #1e3a8a;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.upload-resume-btn:hover {
+    background-color: #fbbf24; /* Darker yellow on hover */
+    transform: translateY(-2px); /* Elevate on hover */
+}
+
+.upload-resume-btn:active {
+    background-color: #f59e0b; /* Even darker yellow on click */
+    transform: translateY(0); /* Reset position */
+}
+
+/* General Styles for Buttons */
+.buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
+
+/* Edit Button */
+.edit-btn {
+    background-color: #007bff; /* Blue */
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #0056b3; /* Darker blue */
+    transform: translateY(-2px);
+}
+
+.edit-btn:active {
+    background-color: #004085; /* Even darker blue */
+    transform: translateY(0);
+}
+
+/* Save Button */
+.save-btn {
+    background-color: #28a745; /* Green */
+    color: white;
+}
+
+.save-btn:hover {
+    background-color: #218838; /* Darker green */
+    transform: translateY(-2px);
+}
+
+.save-btn:active {
+    background-color: #1e7e34; /* Even darker green */
+    transform: translateY(0);
+}
+
+/* Cancel Button */
+.cancel-btn {
+    background-color: #dc3545; /* Red */
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #c82333; /* Darker red */
+    transform: translateY(-2px);
+}
+
+.cancel-btn:active {
+    background-color: #bd2130; /* Even darker red */
+    transform: translateY(0);
+}
+
+/* Add Button (New) */
+.add-btn {
+    background-color: #fbbf24; /* Yellow */
+    color: #1e3a8a;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.add-btn:hover {
+    background-color: #f59e0b; /* Darker yellow */
+    transform: translateY(-2px);
+}
+
+.add-btn:active {
+    background-color: #e58e00; /* Even darker yellow */
+    transform: translateY(0);
+}
+
+/* Flexbox for Button Layout */
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    justify-content: flex-start;
+}
+
+/* Hover Effect for Buttons */
+.buttons button:hover {
+    transform: translateY(-3px);
+}
+
+.buttons button:active {
+    transform: translateY(0);
+}

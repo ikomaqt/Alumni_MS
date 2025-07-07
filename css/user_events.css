@@ -1,0 +1,122 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin-top: 70px;
+}
+
+.container-fluid {
+    padding: 20px;
+}
+
+/* Event Creation Card */
+.post-creation-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.post-creation-header {
+    display: flex;
+    align-items: center;
+}
+
+.post-creation-header i {
+    color: #007BFF;
+    margin-right: 10px;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.post-creation-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #333;
+    background: #f0f2f5;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.post-creation-input:hover {
+    background: #e9ecef;
+}
+
+.post-creation-input::placeholder {
+    color: #999;
+}
+
+/* Events Grid */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Event Card */
+.event-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.event-info {
+    padding: 15px;
+}
+
+.event-info h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #007BFF;
+}
+
+.event-info p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.event-info .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.event-info .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .events-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}

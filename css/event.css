@@ -1,0 +1,196 @@
+/* Container for the page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Container for both sections */
+.main-container {
+    display: flex;
+    height: calc(100vh - 56px); /* Subtract navbar height */
+    padding-left: 7rem;
+}
+
+/* Left section: Post a New Job */
+.post-job-section {
+    width: 40%;
+    padding: 20px;
+    background-color: #f8f9fa;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+    width: 1000px;
+}
+
+/* Right section: Tables of Listed Jobs */
+.job-list-section {
+    width: 100%;
+    padding: 20px 20px;
+    margin-left: -20px;
+    background-color: #ffffff;
+    overflow-y: auto;
+    position: relative; /* Allows absolute positioning of elements */
+}
+
+/* Styling for form inputs */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 600px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.time {
+    width: 260px;
+    height: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Button styles */
+.btn {
+    width: 600px;
+    height: 40px;
+    margin-bottom: 20px;
+    background-color: #1e3a8a;
+    color: white;
+}
+
+.btn2 {
+    width: 150px; /* Adjusted width for better fitting */
+    height: 40px;
+    padding: 0 20px; /* Add padding for more space */
+    background-color: #1e3a8a;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn2:hover {
+    background-color: #1e3a8a;
+    transform: translateY(-2px);
+}
+
+        .job-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px; /* Add some space above the table */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+            border-radius: 8px; /* Rounded corners */
+            overflow: hidden; /* Prevent overflow of rounded corners */
+        }
+
+        .job-table th,
+        .job-table td {
+            border: none; /* Remove default borders */
+            padding: 12px 15px; /* Increased padding for better spacing */
+            text-align: left;
+        }
+
+        .job-table th {
+            background-color: #1e3a8a; /* Header background color */
+            color: white; /* Header text color */
+            font-weight: bold; /* Bold text for headers */
+        }
+
+        .job-table tbody tr {
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .job-table tbody tr:hover {
+            background-color: #f1f1f1; /* Light gray background on hover */
+        }
+
+        .job-table td {
+            background-color: #ffffff; /* White background for table cells */
+            color: #333; /* Darker text color for better readability */
+        }
+
+        .job-table td button {
+            background-color: #1e3a8a; /* Button background color */
+            color: white; /* Button text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners for buttons */
+            padding: 8px 12px; /* Padding for buttons */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition for button hover */
+        }
+
+        .job-table td button:hover {
+            background-color: #1a2e6d; /* Darker shade on button hover */
+        }
+          /* Overlay and Modal Styles */
+          .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1001;
+            width: 80%;
+            max-width: 650px;
+            
+        }
+
+        .modal.active, .overlay.active {
+            display: block;
+        }
+
+        .close-btn {
+            float: right;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        /* Set Event Button Styles */
+        .set-event-button {
+            text-align: right;
+            margin-top: 20px;
+            margin-bottom: -30px;
+            margin-right: 1300px;
+            
+        }
+
+        .set-event-button .btn {
+            background-color: #1e3a8a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 120px;
+        }
+
+        .set-event-button .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .time-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .time-container label {
+            margin: 0 10px;
+        }
+        
+        h1 {
+            color: #1e3a8a;
+        }

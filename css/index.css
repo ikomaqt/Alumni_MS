@@ -1,0 +1,166 @@
+        /* HR Styling */
+        hr {
+            border: none;
+            height: 5px; /* Adjust the thickness */
+            background-color: #feb47b; /* Set the color */
+        }
+
+    
+
+        /* Slider Styling */
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 400px; /* Adjust height as needed */
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Slider Buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+   /* Slider Dots */
+        }
+        .dots {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #717171;
+        }
+
+        /* Button Styling */
+        .btn-login, .btn-register {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .container-p5 {
+            margin-left: 60px;
+            margin-right: 60px;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 50px 0;
+        }
+
+        .section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Hide sections by default */
+        #history {
+            display: none;
+        }
+        
+        .web-content{
+            font-family: 'Comic Sans MS';
+            color: white;
+            font-size: 26px;
+            text-align: center;
+            padding: 50px;
+
+        }
+
+        .web-title{
+            font-family: Impact;
+            font-size: 40px;
+            font-weight: large; 
+            text-align: center;
+            color: white;
+            padding-top: 2rem;
+        }
+
+        .web-subs{
+            font-family: 'Comic Sans MS';
+            color: #fcd34d;
+            font-size: 32px;
+            text-align: center;
+            padding: 50px;
+            padding-bottom: 1rem;
+        }
+
+        .btn-login{
+            background-color:  #007bff;
+            font-family: 'Comic Sans MS';
+            color:white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+        }
+
+        .btn-register {
+            background-color: #fcd34d;
+            font-family: 'Comic Sans MS';
+            color:white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+            
+        .btn-register:hover{
+            background-color:rgb(216, 182, 71);
+        }
+
+        .btn-login:hover{
+            background-color:rgb(1, 100, 206);
+        }
+
+
+  

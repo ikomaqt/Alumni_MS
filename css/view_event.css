@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #eaeaea; /* Softer background color */
+}
+
+.back-button {
+    background-color: #1e3a8a; /* Deep blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 20px; /* Add some margin */
+    display: flex;
+    align-items: center;
+}
+
+.back-button i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+.back-button:hover {
+    background-color: #1a2e6d; /* Darker shade for hover effect */
+}
+
+.event-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Slightly darker shadow */
+}
+
+.event-image {
+    width: 35%;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.event-info {
+    width: 65%; /* Adjusted width for better balance */
+    background-color: #ffffff;
+    padding: 40px; /* Increased padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.event-details {
+    width: 100%;
+}
+
+.event-details h1 {
+    font-size: 2.8rem; /* Increased font size */
+    color: #222; /* Darker color for better contrast */
+    margin-bottom: 20px; /* Increased margin */
+}
+
+.event-details p {
+    font-size: 1.2rem;
+    color: #666; /* Lighter color for less emphasis */
+    margin-bottom: 15px; /* Increased margin */
+}
+
+.event-actions {
+    margin-top: 30px; /* Increased margin */
+}
+
+.edit-button, .delete-button {
+    padding: 12px 20px; /* Increased padding */
+    font-size: 1.1em; /* Slightly larger font size */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.edit-button {
+    background: #1e3a8a; /* Deep blue color */
+}
+
+.edit-button:hover {
+    background: #1a2e6d; /* Darker shade for hover effect */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.delete-button {
+    background: linear-gradient(90deg, #f44336, #e53935); /* Red gradient */
+}
+
+.delete-button:hover {
+    background: linear-gradient(90deg, #e53935, #f44336);
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .event-container {
+        flex-direction: column; /* Stack elements on smaller screens */
+    }
+
+    .event-image, .event-info {
+        width: 100%; /* Full width for both sections */
+    }
+
+    .event-info {
+        padding: 20px; /* Reduced padding */
+    }
+}
